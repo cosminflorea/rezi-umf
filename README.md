@@ -6,7 +6,7 @@ This project written in Streamlit and Python is created to help medicine student
 specialities and availabe places) for their residency. The data is parsed from .pdf privided by Ministery of Health on 
 website [Rezidentiat.ms.ro](https://rezidentiat.ms.ro/).
 
-## Depencies
+## Dependencies
 ### packages
 1. python 3.7
 2. streamlit
@@ -26,3 +26,7 @@ python -m pip install <package>
 The usage is very simple: Select from sidebar desired option to display data. Some of options are implemented using 
 multiselector to compare different data. 
 
+## Heroku dependencies
+### buildpacks
+1.heroku/python
+2.https://github.com/heroku/heroku-buildpack-apt

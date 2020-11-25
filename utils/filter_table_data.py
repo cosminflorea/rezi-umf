@@ -93,12 +93,12 @@ class FilterTableData(object):
         """
         all_specialities = self.get_specialities()
         if speciality not in all_specialities:
-            raise Exception("{} not found in specialities list: {}"
-                            .format(speciality, all_specialities))
-        total_column = self.table.columns[-1]
-        total_speciality_places = self.table.at[speciality, total_column]
-        logging.info("Total available places for speciality: {} are {}"
-                     .format(speciality, total_speciality_places))
+            total_speciality_places = 0
+        else:
+            total_column = self.table.columns[-1]
+            total_speciality_places = self.table.at[speciality, total_column]
+            logging.info("Total available places for speciality: {} are {}"
+                         .format(speciality, total_speciality_places))
         return total_speciality_places
 
     def get_speciality_availability_by_city(self, speciality, city):
@@ -111,16 +111,13 @@ class FilterTableData(object):
         """
         all_specialities = self.get_specialities()
         all_cities = self.get_cities()
-        if speciality not in all_specialities:
-            raise Exception("{} not found in specialities list: {}"
-                            .format(speciality, all_specialities))
-        if city not in all_cities:
-            raise Exception("{} not found in city list: {}"
-                            .format(city, all_cities))
+        if speciality in all_specialities and city in all_cities:
+            total_speciality_places = self.table.at[speciality, city]
+            logging.info("Total available places for speciality: {} in city: {} are {}"
+                         .format(speciality, city, total_speciality_places))
+        else:
+            total_speciality_places = 0
 
-        total_speciality_places = self.table.at[speciality, city]
-        logging.info("Total available places for speciality: {} in city: {} are {}"
-                     .format(speciality, city, total_speciality_places))
         return total_speciality_places
 
     def get_table_domain(self):

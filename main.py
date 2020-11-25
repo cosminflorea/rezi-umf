@@ -2,6 +2,7 @@ import streamlit as st
 from data import pdf_files
 from displaydata.sidebar import SideBar
 from displaydata.build_view import BuildView
+import cv2
 
 st.set_page_config(
     page_title="Rezidențiat",
