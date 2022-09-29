@@ -67,7 +67,7 @@ pathtools==0.1.2
 pdfminer.six==20201018
 pdfplumber==0.7.4
 pickleshare==0.7.5
-Pillow==7.2.0
+Pillow==9.1
 pipenv==2020.8.13
 prometheus-client==0.8.0
 prompt-toolkit==3.0.7
