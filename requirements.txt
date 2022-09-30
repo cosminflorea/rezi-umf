@@ -65,7 +65,7 @@ pandocfilters==1.4.2
 parso==0.7.1
 pathtools==0.1.2
 pdfminer.six==20211012
-pdfplumber==0.7.4
+pdfplumber==0.6.0
 pickleshare==0.7.5
 Pillow==9.1
 pipenv==2020.8.13
